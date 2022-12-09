@@ -1,8 +1,8 @@
-﻿using System;
-namespace PerfectHomeLocation.Services
+﻿namespace PerfectHomeLocation.Services
 {
-	public interface IMapsService
-	{
-	}
+    public interface IMapsService
+    {
+        Task<SearchByTextResponse> SearchForPlace(string searchString);
+    }
 }
 
