@@ -1,4 +1,4 @@
-using PerfectHomeLocation.Services;
+using PerfectHomeLocation.Clients;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,8 +9,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Configuration.AddJsonFile("secrets.json");
-MapsService mapsService = new MapsService(builder.Configuration["secrets:googleApiKey"]);
-builder.Services.AddSingleton<IMapsService>(mapsService);
+MapsApiClient mapsService = new MapsApiClient(builder.Configuration["secrets:googleApiKey"]);
+builder.Services.AddSingleton<IMapsApiClient>(mapsService);
 
 
 var app = builder.Build();

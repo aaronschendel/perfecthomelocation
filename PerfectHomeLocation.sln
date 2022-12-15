@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32519.379
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfectHomeLocation", "PerfectHomeLocation\PerfectHomeLocation.csproj", "{107F66BD-0DCE-42E2-A520-E11BA8E12DB6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PerfectHomeLocation.Database", "PerfectHomeLocation.Database\PerfectHomeLocation.Database.csproj", "{4D82B8D8-AFF1-47EE-A4D3-1A7E6CCCCB20}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{107F66BD-0DCE-42E2-A520-E11BA8E12DB6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{107F66BD-0DCE-42E2-A520-E11BA8E12DB6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{107F66BD-0DCE-42E2-A520-E11BA8E12DB6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D82B8D8-AFF1-47EE-A4D3-1A7E6CCCCB20}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D82B8D8-AFF1-47EE-A4D3-1A7E6CCCCB20}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D82B8D8-AFF1-47EE-A4D3-1A7E6CCCCB20}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D82B8D8-AFF1-47EE-A4D3-1A7E6CCCCB20}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

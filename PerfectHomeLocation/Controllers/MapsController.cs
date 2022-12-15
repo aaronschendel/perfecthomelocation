@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using PerfectHomeLocation.Services;
+using PerfectHomeLocation.Clients;
+using PerfectHomeLocation.Models;
 
 namespace PerfectHomeLocation.Controllers
 {
@@ -8,18 +9,30 @@ namespace PerfectHomeLocation.Controllers
     public class MapsController : ControllerBase
     {
         private readonly ILogger<MapsController> _logger;
-        private readonly IMapsService _mapsService;
+        private readonly IMapsApiClient _mapsApiClient;
 
-        public MapsController(ILogger<MapsController> logger, IMapsService mapsService)
+        public MapsController(ILogger<MapsController> logger, IMapsApiClient mapsService)
         {
             _logger = logger;
-            _mapsService = mapsService;
+            _mapsApiClient = mapsService;
         }
 
-        [HttpGet]
-        public Task<SearchByTextResponse> Get()
+        [HttpGet("/search")]
+        public Task<SearchByTextResponse> Get(string searchPhrase)
         {
-            return _mapsService.SearchForPlace("panera bread eagan");
+            return _mapsApiClient.SearchForPlace(searchPhrase);
+        }
+
+        [HttpGet("/place/{placeId}")]
+        public Task<PlaceDetailsResponse> GetPlaceDetails(string placeId)
+        {
+            return _mapsApiClient.GetPlaceDetailsResponse(placeId);
+        }
+
+        [HttpGet("/results")]
+        public Task<DistanceResultResponse> GetResults(string homeCandidateAddress)
+        {
+            return null;
         }
     }
 }
