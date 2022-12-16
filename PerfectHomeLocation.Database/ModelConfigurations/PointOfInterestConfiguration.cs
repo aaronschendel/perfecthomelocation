@@ -11,9 +11,12 @@ namespace PerfectHomeLocation.Database.ModelConfigurations
 			builder.HasKey(x => x.PointOfInterestId);
 			builder.Property(x => x.PointOfInterestId).ValueGeneratedOnAdd();
 
-			builder.HasOne(x => x.)
-			
-		}
+
+            builder.HasOne(t => t.PointOfInterestType)
+            .WithMany(u => u.PointOfInterest)
+            .HasForeignKey(u => u.MemberTypeId);
+
+        }
 	}
 }
 

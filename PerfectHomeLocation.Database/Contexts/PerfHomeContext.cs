@@ -1,9 +1,12 @@
-﻿//using System;
-//namespace PerfectHomeLocation.Database
-//{
-//	public class PerfHomeContext
-//	{
-//		public DbSet<>
-//	}
-//}
+﻿using System;
+using Microsoft.EntityFrameworkCore;
+
+namespace PerfectHomeLocation.Database
+{
+	public class PerfHomeContext
+	{
+		public DbSet<PointOfInterest> PointsOfInterest { get; set; }
+
+	}
+}
 
