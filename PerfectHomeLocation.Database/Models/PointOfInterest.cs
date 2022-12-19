@@ -1,6 +1,5 @@
-﻿using PerfectHomeLocation.Database.Models;
-
-namespace PerfectHomeLocation.Database;
+﻿
+namespace PerfectHomeLocation.Database.Models;
 public class PointOfInterest
 {
     public long PointOfInterestId { get; set; }

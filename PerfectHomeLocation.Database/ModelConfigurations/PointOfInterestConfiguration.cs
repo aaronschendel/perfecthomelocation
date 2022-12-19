@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
+using PerfectHomeLocation.Database.Models;
 
 namespace PerfectHomeLocation.Database.ModelConfigurations
 {
@@ -10,13 +11,8 @@ namespace PerfectHomeLocation.Database.ModelConfigurations
 		{
 			builder.HasKey(x => x.PointOfInterestId);
 			builder.Property(x => x.PointOfInterestId).ValueGeneratedOnAdd();
-
-
-            builder.HasOne(t => t.PointOfInterestType)
-            .WithMany(u => u.PointOfInterest)
-            .HasForeignKey(u => u.MemberTypeId);
-
-        }
+			builder.HasOne(p => p.PointOfInterestType);
+		}
 	}
 }
 
