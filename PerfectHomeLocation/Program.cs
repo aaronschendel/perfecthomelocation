@@ -1,31 +1,58 @@
+using Microsoft.EntityFrameworkCore;
 using PerfectHomeLocation.Clients;
+using PerfectHomeLocation.Database;
 
-var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-
-builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-builder.Configuration.AddJsonFile("secrets.json");
-MapsApiClient mapsService = new MapsApiClient(builder.Configuration["secrets:googleApiKey"]);
-builder.Services.AddSingleton<IMapsApiClient>(mapsService);
-
-
-var app = builder.Build();
-
-// Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+public static class Program
 {
-    app.UseSwagger();
-    app.UseSwaggerUI();
+    public static void Main(string[] args)
+    {
+        WebApplication app = WebApplication.CreateBuilder(args)
+            .SetupConfiguration()
+            .SetupDI()
+            .Build()
+            .SetupAppPipeline();
+        
+        app.Run();
+    }
+
+    private static WebApplicationBuilder SetupConfiguration(this WebApplicationBuilder builder)
+    {
+        builder.Configuration.AddJsonFile("secrets.json");
+        return builder;
+    }
+
+    private static WebApplicationBuilder SetupDI(this WebApplicationBuilder builder)
+    {
+        var services = builder.Services;
+
+        services.AddControllers();
+        services.AddEndpointsApiExplorer();
+        services.AddSwaggerGen();
+
+        //MapsApiClient mapsService = new MapsApiClient(builder.Configuration["secrets:googleApiKey"] ?? "");
+        services.AddScoped<IMapsApiClient>(x =>
+            new MapsApiClient(builder.Configuration["secrets:googleApiKey"] ?? "", x.GetRequiredService<PerfHomeContext>()));
+
+        services.AddDbContext<PerfHomeContext>(
+            options => options.UseNpgsql(builder.Configuration["secrets:connectionString"]));
+
+
+        return builder;
+    }
+
+    private static WebApplication SetupAppPipeline(this WebApplication app)
+    {
+        // Configure the HTTP request pipeline.
+        if (app.Environment.IsDevelopment())
+        {
+            app.UseSwagger();
+            app.UseSwaggerUI();
+        }
+
+        app.UseHttpsRedirection();
+        app.UseAuthorization();
+        app.MapControllers();
+        return app;
+    }
 }
 
-app.UseHttpsRedirection();
-
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();

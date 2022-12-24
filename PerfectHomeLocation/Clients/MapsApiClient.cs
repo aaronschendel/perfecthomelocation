@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using PerfectHomeLocation.Database;
 
 namespace PerfectHomeLocation.Clients
 {
@@ -7,11 +8,13 @@ namespace PerfectHomeLocation.Clients
         private readonly HttpClient _mapsApiHttpClient;
         private readonly string _baseAddress = "https://maps.googleapis.com/maps/api/";
         private readonly string _apiKey;
+        private readonly PerfHomeContext _context;
 
-        public MapsApiClient(string apiKey)
+        public MapsApiClient(string apiKey, PerfHomeContext dbContext)
         {
             _mapsApiHttpClient = new HttpClient { BaseAddress = new Uri("https://maps.googleapis.com/maps/api/") };
             _apiKey = apiKey;
+            _context = dbContext;
         }
 
         public async Task<SearchByTextResponse> SearchForPlace(string searchString)

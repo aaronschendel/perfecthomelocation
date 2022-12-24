@@ -10,9 +10,12 @@ namespace PerfectHomeLocation.Database.ModelConfigurations
 		public void Configure(EntityTypeBuilder<PointOfInterest> builder)
 		{
 			builder.HasKey(x => x.PointOfInterestId);
-			builder.Property(x => x.PointOfInterestId).ValueGeneratedOnAdd();
+			//builder.Property(x => x.PointOfInterestId).ValueGeneratedOnAdd();
 			builder.HasOne(p => p.PointOfInterestType);
-		}
+
+            builder.ToTable("point_of_interest");
+
+        }
 	}
 }
 

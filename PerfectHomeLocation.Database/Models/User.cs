@@ -7,7 +7,7 @@ namespace PerfectHomeLocation.Database.Models
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public string Email { get; set; }
-		public ICollection<PointOfInterest> PointsOfInterest { get; set; }
+		public virtual ICollection<PointOfInterest> PointsOfInterest { get; set; }
 	}
 }
 

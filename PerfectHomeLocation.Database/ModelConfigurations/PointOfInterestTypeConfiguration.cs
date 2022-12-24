@@ -22,6 +22,8 @@ namespace PerfectHomeLocation.Database.ModelConfigurations
 				PointOfInterestTypeId = 2,
 				Name = "Relative"
 			});
+
+			builder.ToTable("point_of_interest_type");
 		}
 	}
 }

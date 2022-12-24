@@ -11,7 +11,9 @@ namespace PerfectHomeLocation.Database.ModelConfigurations
         {
             builder.HasKey(u => u.UserId);
 
-            builder.HasMany(u => u.PointsOfInterest)
+            builder.HasMany(u => u.PointsOfInterest);
+
+            builder.ToTable("user");
         }
     }
 }
