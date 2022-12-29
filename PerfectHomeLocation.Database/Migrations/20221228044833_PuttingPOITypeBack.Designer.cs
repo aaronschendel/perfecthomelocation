@@ -12,8 +12,8 @@ using PerfectHomeLocation.Database.Contexts;
 namespace PerfectHomeLocation.Database.Migrations
 {
     [DbContext(typeof(PerfHomeContext))]
-    [Migration("20221221223248_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20221228044833_PuttingPOITypeBack")]
+    partial class PuttingPOITypeBack
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,6 +21,9 @@ namespace PerfectHomeLocation.Database.Migrations
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "7.0.1")
+                .HasAnnotation("Proxies:ChangeTracking", false)
+                .HasAnnotation("Proxies:CheckEquality", false)
+                .HasAnnotation("Proxies:LazyLoading", true)
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
@@ -34,6 +37,10 @@ namespace PerfectHomeLocation.Database.Migrations
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<long>("PointOfInterestId"));
 
                     b.Property<string>("FriendlyName")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PlaceId")
                         .IsRequired()
                         .HasColumnType("text");
 
@@ -53,7 +60,7 @@ namespace PerfectHomeLocation.Database.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("PointsOfInterest");
+                    b.ToTable("point_of_interest", (string)null);
                 });
 
             modelBuilder.Entity("PerfectHomeLocation.Database.Models.PointOfInterestType", b =>
@@ -68,14 +75,21 @@ namespace PerfectHomeLocation.Database.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int?>("PointOfInterestTypeId1")
-                        .HasColumnType("integer");
-
                     b.HasKey("PointOfInterestTypeId");
 
-                    b.HasIndex("PointOfInterestTypeId1");
+                    b.ToTable("point_of_interest_type", (string)null);
 
-                    b.ToTable("PointOfInterestTypes");
+                    b.HasData(
+                        new
+                        {
+                            PointOfInterestTypeId = 1,
+                            Name = "Exact"
+                        },
+                        new
+                        {
+                            PointOfInterestTypeId = 2,
+                            Name = "Relative"
+                        });
                 });
 
             modelBuilder.Entity("PerfectHomeLocation.Database.Models.User", b =>
@@ -100,7 +114,7 @@ namespace PerfectHomeLocation.Database.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("user", (string)null);
                 });
 
             modelBuilder.Entity("PerfectHomeLocation.Database.Models.PointOfInterest", b =>
@@ -116,18 +130,6 @@ namespace PerfectHomeLocation.Database.Migrations
                         .HasForeignKey("UserId");
 
                     b.Navigation("PointOfInterestType");
-                });
-
-            modelBuilder.Entity("PerfectHomeLocation.Database.Models.PointOfInterestType", b =>
-                {
-                    b.HasOne("PerfectHomeLocation.Database.Models.PointOfInterestType", null)
-                        .WithMany("PointOfInterestTypes")
-                        .HasForeignKey("PointOfInterestTypeId1");
-                });
-
-            modelBuilder.Entity("PerfectHomeLocation.Database.Models.PointOfInterestType", b =>
-                {
-                    b.Navigation("PointOfInterestTypes");
                 });
 
             modelBuilder.Entity("PerfectHomeLocation.Database.Models.User", b =>

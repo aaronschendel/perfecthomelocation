@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
 using PerfectHomeLocation.Database.Contexts;
 
-namespace PerfectHomeLocation.Api.Clients
+namespace PerfectHomeLocation.Core.Clients
 {
     public class MapsApiClient : IMapsApiClient
     {

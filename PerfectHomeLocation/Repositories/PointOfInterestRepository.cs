@@ -1,7 +1,7 @@
-﻿using PerfectHomeLocation.Database;
+﻿using PerfectHomeLocation.Database.Contexts;
 using PerfectHomeLocation.Database.Models;
 
-namespace PerfectHomeLocation.Repositories
+namespace PerfectHomeLocation.Api.Repositories
 {
     public class PointOfInterestRepository : IPointOfInterestRepository
     {

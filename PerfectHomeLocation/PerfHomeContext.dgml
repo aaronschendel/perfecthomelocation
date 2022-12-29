@@ -1,52 +1,121 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DirectedGraph GraphDirection="LeftToRight" xmlns="http://schemas.microsoft.com/vs/2009/dgml">
   <Nodes>
-<Node Id="IModel" Label="PerfHomeContext" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" PropertyAccessMode="PropertyAccessMode.Default" ProductVersion="7.0.1" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]]
-Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn
-Relational:MaxIdentifierLength: 63
-RelationshipDiscoveryConvention:InverseNavigationCandidates: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]]" Category="Model" Group="Expanded" />
-<Node Id = "PointOfInterest" Label="PointOfInterest" Name="PointOfInterest" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: PointsOfInterest
-RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
-<Node Id = "PointOfInterestType" Label="PointOfInterestType" Name="PointOfInterestType" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: PointOfInterestTypes
-RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
-<Node Id = "PointOfInterest.PointOfInterestId" Label="PointOfInterestId (long)" Name="PointOfInterestId" Category="Property Primary" Type="long" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
-<Node Id = "PointOfInterest.PointOfInterestType" Label="PointOfInterestType (1)" Name="PointOfInterestType" Category="Navigation Property" Type="PointOfInterestType"  Field="" Dependent="" Principal="PointOfInterestType" Inverse="" PropertyAccessMode="PropertyAccessMode.Default" />
-<Node Id = "PointOfInterest.FriendlyName" Label="FriendlyName (string)" Name="FriendlyName" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
-<Node Id = "PointOfInterest.PointOfInterestTypeId" Label="PointOfInterestTypeId (int)" Name="PointOfInterestTypeId" Category="Property Foreign" Type="int" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="True" IsIndexed="True" IsShadow="True" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
-<Node Id = "PointOfInterest.SearchPhrase" Label="SearchPhrase (string)" Name="SearchPhrase" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
-<Node Id = "PointOfInterest.UserId" Label="UserId (long?)" Name="UserId" Category="Property Foreign" Type="long?" MaxLength="None" Field="nofield" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="True" IsRequired="False" IsIndexed="True" IsShadow="True" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
-<Node Id = "User" Label="User" Name="User" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="Relational:TableName: Users
-RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" Category="EntityType" Group="Expanded" />
-<Node Id = "PointOfInterestType.PointOfInterestTypeId" Label="PointOfInterestTypeId (int)" Name="PointOfInterestTypeId" Category="Property Primary" Type="int" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
-<Node Id = "PointOfInterestType.Name" Label="Name (string)" Name="Name" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
-<Node Id = "User" Label="User" Name="User" BaseClass="" IsAbstract="False" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot"  Annotations="" Category="EntityType" Group="Expanded" />
-<Node Id = "User.UserId" Label="UserId (long)" Name="UserId" Category="Property Primary" Type="long" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn" IsPrimaryKey="True" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="ValueGenerated.OnAdd" />
-<Node Id = "User.PointsOfInterest" Label="PointsOfInterest (*)" Name="PointsOfInterest" Category="Navigation Collection" Type="ICollection&lt;PointOfInterest&gt;"  Field="" Dependent="PointOfInterest" Principal="" Inverse="" PropertyAccessMode="PropertyAccessMode.Default" />
-<Node Id = "User.Email" Label="Email (string)" Name="Email" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
-<Node Id = "User.FirstName" Label="FirstName (string)" Name="FirstName" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
-<Node Id = "User.LastName" Label="LastName (string)" Name="LastName" Category="Property Required" Type="string" MaxLength="None" Field="" PropertyAccessMode="PropertyAccessMode.Default" BeforeSaveBehavior="PropertySaveBehavior.Save" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" IsPrimaryKey="False" IsForeignKey="False" IsRequired="True" IsIndexed="False" IsShadow="False" IsAlternateKey="False" IsConcurrencyToken="False" IsUnicode="True" ValueGenerated="None" />
+    <Node Id="IModel" Category="Model" Annotations="BaseTypeDiscoveryConvention:DerivedTypes: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.List`1[Microsoft.EntityFrameworkCore.Metadata.IConventionEntityType]] Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn Proxies:ChangeTracking: False Proxies:CheckEquality: False Proxies:LazyLoading: True Relational:MaxIdentifierLength: 63 RelationshipDiscoveryConvention:InverseNavigationCandidates: System.Collections.Generic.Dictionary`2[System.Type,System.Collections.Generic.SortedSet`1[System.Type]]" Bounds="0,0,744.3,557.68" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" Label="PerfHomeContext" ProductVersion="7.0.1" PropertyAccessMode="PropertyAccessMode.Default" />
+    <Node Id="PointOfInterest" Category="EntityType" Annotations="NavigationAccessMode: Field Relational:Schema: Relational:TableName: point_of_interest RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="20,40,355.96,253.84" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="PointOfInterest" Name="PointOfInterest" />
+    <Node Id="PointOfInterest.FriendlyName" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="201.046666666667,135.96,134.106666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="FriendlyName (string)" MaxLength="None" Name="FriendlyName" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="PointOfInterest.LazyLoader" Category="Navigation Property" Bounds="40,80,96.29,25.96" Dependent="" Field="" Inverse="" Label="LazyLoader (1)" Name="LazyLoader" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="n" />
+    <Node Id="PointOfInterest.PlaceId" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="166.29,80,98.4366666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PlaceId (string)" MaxLength="None" Name="PlaceId" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="PointOfInterest.PointOfInterestId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="211.57,191.92,144.39,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PointOfInterestId (long)" MaxLength="None" Name="PointOfInterestId" PropertyAccessMode="PropertyAccessMode.Default" Type="long" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="PointOfInterest.PointOfInterestType" Category="Navigation Property" Bounds="40,191.92,141.57,25.96" Dependent="" Field="" Inverse="" Label="PointOfInterestType (1)" Name="PointOfInterestType" Principal="PointOfInterestType" PropertyAccessMode="PropertyAccessMode.Field" Type="PointOfInterestType" />
+    <Node Id="PointOfInterest.PointOfInterestTypeId" Category="Property Foreign" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="40,247.88,159.123333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PointOfInterestTypeId (int)" MaxLength="None" Name="PointOfInterestTypeId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="PointOfInterest.SearchPhrase" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="40,135.96,131.046666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="SearchPhrase (string)" MaxLength="None" Name="SearchPhrase" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="PointOfInterestType" Category="EntityType" Annotations="NavigationAccessMode: Field Relational:Schema: Relational:TableName: point_of_interest_type RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="142.722720583107,337.645853386343,199.123333333333,197.88" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="PointOfInterestType" Name="PointOfInterestType" UseManualLocation="True" />
+    <Node Id="PointOfInterestType.LazyLoader" Category="Property Optional" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="162.722789350937,433.605861206055,152.306666666667,25.96" Field="nofield" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="False" IsShadow="False" IsUnicode="True" Label="LazyLoader (ILazyLoader)" MaxLength="None" Name="LazyLoader" PropertyAccessMode="PropertyAccessMode.Default" Type="ILazyLoader" ValueGenerated="None" />
+    <Node Id="PointOfInterestType.Name" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="162.722744998723,377.645839233398,92.32,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Name (string)" MaxLength="None" Name="Name" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="PointOfInterestType.PointOfInterestTypeId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="162.722773583521,489.565867919922,159.123333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PointOfInterestTypeId (int)" MaxLength="None" Name="PointOfInterestTypeId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="User" Category="EntityType" Annotations="NavigationAccessMode: Field Relational:Schema: Relational:TableName: user RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutable.ImmutableSortedDictionary`2[System.Reflection.PropertyInfo,System.ValueTuple`2[System.Type,System.Nullable`1[System.Boolean]]]" BaseClass="" Bounds="395.66,339.8,328.64,197.88" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="User" Name="User" />
+    <Node Id="User.Email" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="534.026666666667,379.8,88.95,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="Email (string)" MaxLength="None" Name="Email" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="User.FirstName" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="415.66,491.72,114.42,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="FirstName (string)" MaxLength="None" Name="FirstName" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="User.LastName" Category="Property Required" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="541.95,435.76,113.236666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="False" IsRequired="True" IsShadow="False" IsUnicode="True" Label="LastName (string)" MaxLength="None" Name="LastName" PropertyAccessMode="PropertyAccessMode.Default" Type="string" ValueGenerated="None" />
+    <Node Id="User.LazyLoader" Category="Navigation Property" Bounds="415.66,435.76,96.2900000000001,25.96" Dependent="" Field="" Inverse="" Label="LazyLoader (1)" Name="LazyLoader" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="n" />
+    <Node Id="User.UserId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="Npgsql:ValueGenerationStrategy: IdentityByDefaultColumn" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="415.66,379.8,88.3666666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="False" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="UserId (long)" MaxLength="None" Name="UserId" PropertyAccessMode="PropertyAccessMode.Default" Type="long" ValueGenerated="ValueGenerated.OnAdd" />
+    <Node Id="User.UserPointsOfInterest" Category="Navigation Collection" Bounds="560.08,491.72,144.22,25.96" Dependent="UserPointOfInterest" Field="" Inverse="User" Label="UserPointsOfInterest (*)" Name="UserPointsOfInterest" Principal="" PropertyAccessMode="PropertyAccessMode.Field" Type="ICollection&lt;UserPointOfInterest&gt;" />
+    <Node Id="UserPointOfInterest" Category="EntityType" Annotations="" BaseClass="" Bounds="406.05,67.98,307.86,197.88" ChangeTrackingStrategy="ChangeTrackingStrategy.Snapshot" Group="Expanded" IsAbstract="False" Label="UserPointOfInterest" Name="UserPointOfInterest" />
+    <Node Id="UserPointOfInterest.LazyLoader" Category="Navigation Property" Bounds="426.05,163.94,96.29,25.96" Dependent="" Field="" Inverse="" Label="LazyLoader (1)" Name="LazyLoader" Principal="" PropertyAccessMode="PropertyAccessMode.Default" Type="n" />
+    <Node Id="UserPointOfInterest.PointOfInterestType" Category="Navigation Property" Bounds="552.34,163.94,141.57,25.96" Dependent="" Field="" Inverse="" Label="PointOfInterestType (1)" Name="PointOfInterestType" Principal="PointOfInterestType" PropertyAccessMode="PropertyAccessMode.Field" Type="PointOfInterestType" />
+    <Node Id="UserPointOfInterest.PointOfInterestTypeId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="426.05,219.9,159.123333333333,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="True" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="PointOfInterestTypeId (int)" MaxLength="None" Name="PointOfInterestTypeId" PropertyAccessMode="PropertyAccessMode.Default" Type="int" ValueGenerated="None" />
+    <Node Id="UserPointOfInterest.User" Category="Navigation Property" Bounds="426.05,107.98,60.7833333333334,25.96" Dependent="" Field="" Inverse="UserPointsOfInterest" Label="User (1)" Name="User" Principal="User" PropertyAccessMode="PropertyAccessMode.Field" Type="User" />
+    <Node Id="UserPointOfInterest.UserId" Category="Property Primary" AfterSaveBehavior="PropertySaveBehavior.Save" Annotations="" BeforeSaveBehavior="PropertySaveBehavior.Save" Bounds="516.833333333333,107.98,88.3666666666667,25.96" Field="" IsAlternateKey="False" IsConcurrencyToken="False" IsForeignKey="True" IsIndexed="False" IsPrimaryKey="True" IsRequired="True" IsShadow="False" IsUnicode="True" Label="UserId (long)" MaxLength="None" Name="UserId" PropertyAccessMode="PropertyAccessMode.Default" Type="long" ValueGenerated="None" />
   </Nodes>
   <Links>
-<Link Source = "IModel" Target="PointOfInterest" Category="Contains" />
-<Link Source = "IModel" Target="PointOfInterestType" Category="Contains" />
-<Link Source = "PointOfInterest" Target="PointOfInterest.PointOfInterestType" Category="Contains" />
-<Link Source = "PointOfInterest" Target="PointOfInterest.PointOfInterestId" Category="Contains" />
-<Link Source="PointOfInterest" Target="PointOfInterestType" From="PointOfInterest.PointOfInterestTypeId" To="PointOfInterestType.PointOfInterestTypeId" Name="PointOfInterest -> PointOfInterestType" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
-<Link Source="PointOfInterest" Target="User" From="PointOfInterest.UserId" To="User.UserId" Name="PointOfInterest -> User" Annotations="" IsUnique="False" Label="1:*" Category="Foreign Key" />
-<Link Source = "PointOfInterest" Target="PointOfInterest.FriendlyName" Category="Contains" />
-<Link Source = "PointOfInterest" Target="PointOfInterest.PointOfInterestTypeId" Category="Contains" />
-<Link Source = "PointOfInterest" Target="PointOfInterest.SearchPhrase" Category="Contains" />
-<Link Source = "PointOfInterest" Target="PointOfInterest.UserId" Category="Contains" />
-<Link Source = "IModel" Target="User" Category="Contains" />
-<Link Source = "PointOfInterestType" Target="PointOfInterestType.PointOfInterestTypeId" Category="Contains" />
-<Link Source = "PointOfInterestType" Target="PointOfInterestType.Name" Category="Contains" />
-<Link Source = "IModel" Target="User" Category="Contains" />
-<Link Source = "User" Target="User.PointsOfInterest" Category="Contains" />
-<Link Source = "User" Target="User.UserId" Category="Contains" />
-<Link Source = "User" Target="User.Email" Category="Contains" />
-<Link Source = "User" Target="User.FirstName" Category="Contains" />
-<Link Source = "User" Target="User.LastName" Category="Contains" />
+    <Link Source="IModel" Target="PointOfInterest" Category="Contains" />
+    <Link Source="IModel" Target="PointOfInterestType" Category="Contains" />
+    <Link Source="IModel" Target="User" Category="Contains" />
+    <Link Source="IModel" Target="UserPointOfInterest" Category="Contains" />
+    <Link Source="PointOfInterest" Target="PointOfInterest.FriendlyName" Category="Contains" />
+    <Link Source="PointOfInterest" Target="PointOfInterest.LazyLoader" Category="Contains" />
+    <Link Source="PointOfInterest" Target="PointOfInterest.PlaceId" Category="Contains" />
+    <Link Source="PointOfInterest" Target="PointOfInterest.PointOfInterestId" Category="Contains" />
+    <Link Source="PointOfInterest" Target="PointOfInterest.PointOfInterestType" Category="Contains" />
+    <Link Source="PointOfInterest" Target="PointOfInterest.PointOfInterestTypeId" Category="Contains" />
+    <Link Source="PointOfInterest" Target="PointOfInterest.SearchPhrase" Category="Contains" />
+    <Link Source="PointOfInterest" Target="PointOfInterestType" Category="Foreign Key" Annotations="" Bounds="218.832150018731,293.84,5.73794162676154,34.9249142469425" From="PointOfInterest.PointOfInterestTypeId" IsUnique="False" Label="1:*" LabelBounds="225.701475536554,302.998216700384,14.0733333333334,15.96" Name="PointOfInterest -&gt; PointOfInterestType" To="PointOfInterestType.PointOfInterestTypeId" />
+    <Link Source="PointOfInterestType" Target="PointOfInterestType.LazyLoader" Category="Contains" />
+    <Link Source="PointOfInterestType" Target="PointOfInterestType.Name" Category="Contains" />
+    <Link Source="PointOfInterestType" Target="PointOfInterestType.PointOfInterestTypeId" Category="Contains" />
+    <Link Source="User" Target="User.Email" Category="Contains" />
+    <Link Source="User" Target="User.FirstName" Category="Contains" />
+    <Link Source="User" Target="User.LastName" Category="Contains" />
+    <Link Source="User" Target="User.LazyLoader" Category="Contains" />
+    <Link Source="User" Target="User.UserId" Category="Contains" />
+    <Link Source="User" Target="User.UserPointsOfInterest" Category="Contains" />
+    <Link Source="UserPointOfInterest" Target="PointOfInterestType" Category="Foreign Key" Annotations="" Bounds="348.707507257412,265.86,94.7104455616475,80.3919604236468" From="UserPointOfInterest.PointOfInterestTypeId" IsUnique="False" Label="1:*" LabelBounds="397.356980534906,307.580747620928,14.0733333333334,15.96" Name="UserPointOfInterest -&gt; PointOfInterestType" To="PointOfInterestType.PointOfInterestTypeId" />
+    <Link Source="UserPointOfInterest" Target="User" Category="Foreign Key" Annotations="" Bounds="559.97998046875,265.859985351563,0,64.9400024414063" From="UserPointOfInterest.UserId" IsUnique="False" Label="1:*" LabelBounds="545.906666666667,308.84,14.0733333333333,15.96" Name="UserPointOfInterest -&gt; User" To="User.UserId" />
+    <Link Source="UserPointOfInterest" Target="UserPointOfInterest.LazyLoader" Category="Contains" />
+    <Link Source="UserPointOfInterest" Target="UserPointOfInterest.PointOfInterestType" Category="Contains" />
+    <Link Source="UserPointOfInterest" Target="UserPointOfInterest.PointOfInterestTypeId" Category="Contains" />
+    <Link Source="UserPointOfInterest" Target="UserPointOfInterest.User" Category="Contains" />
+    <Link Source="UserPointOfInterest" Target="UserPointOfInterest.UserId" Category="Contains" />
   </Links>
+  <Categories>
+    <Category Id="Contains" Label="Contains" Description="Whether the source of the link contains the target object" CanBeDataDriven="False" CanLinkedNodesBeDataDriven="True" IncomingActionLabel="Contained By" IsContainment="True" OutgoingActionLabel="Contains" />
+    <Category Id="EntityType" />
+    <Category Id="Foreign Key" />
+    <Category Id="Model" />
+    <Category Id="Navigation Collection" />
+    <Category Id="Navigation Property" />
+    <Category Id="Property Foreign" />
+    <Category Id="Property Optional" />
+    <Category Id="Property Primary" />
+    <Category Id="Property Required" />
+  </Categories>
+  <Properties>
+    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
+    <Property Id="BaseClass" Description="Base class" Group="Model Properties" DataType="System.String" />
+    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="CanLinkedNodesBeDataDriven" Label="CanLinkedNodesBeDataDriven" Description="CanLinkedNodesBeDataDriven" DataType="System.Boolean" />
+    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
+    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="Field" Description="Backing field" Group="Model Properties" DataType="System.String" />
+    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
+    <Property Id="GraphDirection" DataType="Microsoft.VisualStudio.Diagrams.Layout.LayoutOrientation" />
+    <Property Id="Group" Label="Group" Description="Display the node as a group" DataType="Microsoft.VisualStudio.GraphModel.GraphGroupStyle" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IncomingActionLabel" Label="IncomingActionLabel" Description="IncomingActionLabel" DataType="System.String" />
+    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="IsAbstract" Label="IsAbstract" Description="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsContainment" DataType="System.Boolean" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
+    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
+    <Property Id="Label" Label="Label" Description="Displayable label of an Annotatable object" DataType="System.String" />
+    <Property Id="LabelBounds" DataType="System.Windows.Rect" />
+    <Property Id="MaxLength" DataType="System.String" />
+    <Property Id="Name" Group="Model Properties" DataType="System.String" />
+    <Property Id="OutgoingActionLabel" Label="OutgoingActionLabel" Description="OutgoingActionLabel" DataType="System.String" />
+    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />
+    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
+    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
+    <Property Id="Type" Description="CLR data type" Group="Model Properties" DataType="System.String" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
   <Styles>
     <Style TargetType="Node" GroupLabel="EntityType" ValueLabel="True">
       <Condition Expression="HasCategory('EntityType')" />
@@ -81,33 +150,4 @@ RelationshipDiscoveryConvention:NavigationCandidates: System.Collections.Immutab
       <Setter Property="Background" Value="#FFFFFFFF" />
     </Style>
   </Styles>
-  <Properties>
-    <Property Id="Name" Group="Model Properties" DataType="System.String" />
-    <Property Id="Field"  Description="Backing field" Group="Model Properties" DataType="System.String" />
-    <Property Id="Type"  Description="CLR data type" Group="Model Properties" DataType="System.String" />
-    <Property Id="To" Description="Source property" Group="Model Properties" DataType="System.String" />
-    <Property Id="From" Description="Target property" Group="Model Properties" DataType="System.String" />
-    <Property Id="Dependent" Description="Dependent entity" Group="Model Properties" DataType="System.String" />
-    <Property Id="Inverse" Description="Inverse entity" Group="Model Properties" DataType="System.String" />
-    <Property Id="Principal" Description="Principal entity" Group="Model Properties" DataType="System.String" />    
-    <Property Id="Annotations" Description="Annotations" Group="Model Properties" DataType="System.String" />
-    <Property Id="BaseClass"  Description="Base class" Group="Model Properties" DataType="System.String" />
-    <Property Id="ChangeTrackingStrategy" Description="Change tracking strategy" Group="Model Properties" DataType="System.String" />
-    <Property Id="IsUnique" Group="Model Properties" DataType="System.Boolean" />
-    <Property Id="IsAbstract" Group="Model Properties" DataType="System.Boolean" />
-    <Property Id="ProductVersion" Label="Product Version" Description="EF Core product version" Group="Model Properties" DataType="System.String" />
-    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="IsRequired" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="IsPrimaryKey" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="IsForeignKey" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="IsShadow" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="IsAlternateKey" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="IsConcurrencyToken" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="IsIndexed" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="IsUnicode" Group="Property Flags" DataType="System.Boolean" />
-    <Property Id="ValueGenerated" Group="Property Flags" DataType="System.String" />
-    <Property Id="BeforeSaveBehavior" Group="Property Flags" DataType="System.String" />
-    <Property Id="AfterSaveBehavior" Group="Property Flags" DataType="System.String" />
-    <Property Id="PropertyAccessMode" Group="Property Flags" DataType="System.String" />
-  </Properties>
 </DirectedGraph>

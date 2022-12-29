@@ -1,4 +1,4 @@
-﻿namespace PerfectHomeLocation.Api.Clients
+﻿namespace PerfectHomeLocation.Core.Clients
 {
     public interface IMapsApiClient
     {

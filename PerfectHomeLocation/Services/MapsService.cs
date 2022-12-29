@@ -1,9 +1,9 @@
-﻿using PerfectHomeLocation.Clients;
+﻿using PerfectHomeLocation.Api.Clients;
+using PerfectHomeLocation.Api.Models;
+using PerfectHomeLocation.Api.Repositories;
 using PerfectHomeLocation.Database.Models;
-using PerfectHomeLocation.Models;
-using PerfectHomeLocation.Repositories;
 
-namespace PerfectHomeLocation.Services
+namespace PerfectHomeLocation.Api.Services
 {
     public class MapsService : IMapsService
     {
@@ -16,7 +16,7 @@ namespace PerfectHomeLocation.Services
             _mapsApiClient = mapsApiClient;
         }
 
-        public async Task<SavePointOfInterestResponse> SavePointOfInterest(string searchPhrase, string friendlyName, PointOfInterestType pointOfInterestType)
+        public async Task<SavePointOfInterestResponse> SavePointOfInterest(string searchPhrase, string friendlyName, Models.PointOfInterestType pointOfInterestType)
         {
             var searchResponse = await _mapsApiClient.SearchForPlace(searchPhrase);
             var placeId = searchResponse.Candidates[0].PlaceId;
@@ -26,7 +26,7 @@ namespace PerfectHomeLocation.Services
             {
                 FriendlyName = friendlyName,
                 SearchPhrase = searchPhrase,
-                PointOfInterestType = pointOfInterestType,
+                PointOfInterestTypeId = (int) pointOfInterestType,
                 PlaceId = placeId
             };
 

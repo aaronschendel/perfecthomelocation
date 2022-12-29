@@ -1,10 +1,10 @@
 using Microsoft.AspNetCore.Mvc;
-using PerfectHomeLocation.Clients;
+using PerfectHomeLocation.Api.Models;
+using PerfectHomeLocation.Api.Services;
 using PerfectHomeLocation.Database.Models;
-using PerfectHomeLocation.Models;
-using PerfectHomeLocation.Services;
+using PerfectHomeLocation.Api.Clients;
 
-namespace PerfectHomeLocation.Controllers
+namespace PerfectHomeLocation.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
@@ -14,10 +14,11 @@ namespace PerfectHomeLocation.Controllers
         private readonly IMapsApiClient _mapsApiClient;
         private readonly IMapsService _mapsService;
 
-        public MapsController(ILogger<MapsController> logger, IMapsApiClient mapsApiClient)
+        public MapsController(ILogger<MapsController> logger, IMapsApiClient mapsApiClient, IMapsService mapsService)
         {
             _logger = logger;
             _mapsApiClient = mapsApiClient;
+            _mapsService= mapsService;
         }
 
         [HttpGet("/search")]
@@ -27,7 +28,7 @@ namespace PerfectHomeLocation.Controllers
         }
 
         [HttpPost("/pointofinterest/save")]
-        public async Task<SavePointOfInterestResponse> SavePointOfInterest(string searchPhrase, string friendlyName, int pointOfInterestType)
+        public async Task<SavePointOfInterestResponse> SavePointOfInterest(string searchPhrase, string friendlyName, Models.PointOfInterestType pointOfInterestType)
         {
             return await _mapsService.SavePointOfInterest(searchPhrase, friendlyName, pointOfInterestType);
         }

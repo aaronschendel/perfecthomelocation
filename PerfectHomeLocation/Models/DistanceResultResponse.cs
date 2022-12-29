@@ -1,5 +1,5 @@
 ﻿using System;
-namespace PerfectHomeLocation.Models
+namespace PerfectHomeLocation.Api.Models
 {
 	public class DistanceResultResponse
 	{

@@ -1,6 +1,6 @@
 ﻿using PerfectHomeLocation.Database.Models;
 
-namespace PerfectHomeLocation.Repositories
+namespace PerfectHomeLocation.Api.Repositories
 {
     public interface IPointOfInterestRepository
     {

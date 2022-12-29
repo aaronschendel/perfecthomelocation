@@ -1,7 +1,8 @@
-﻿using PerfectHomeLocation.Database.Models;
-using PerfectHomeLocation.Models;
+﻿using PerfectHomeLocation.Api.Models;
+using PerfectHomeLocation.Database.Models;
+using PointOfInterestType = PerfectHomeLocation.Api.Models.PointOfInterestType;
 
-namespace PerfectHomeLocation.Services
+namespace PerfectHomeLocation.Api.Services
 {
     public interface IMapsService
     {

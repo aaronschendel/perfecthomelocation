@@ -4,7 +4,7 @@ using PerfectHomeLocation.Database.Models;
 using Microsoft.EntityFrameworkCore.Diagnostics;
 
 
-namespace PerfectHomeLocation.Database
+namespace PerfectHomeLocation.Database.Contexts
 {
     public class PerfHomeContext : DbContext
     {
@@ -16,6 +16,7 @@ namespace PerfectHomeLocation.Database
         public DbSet<PointOfInterest> PointsOfInterest { get; set; }
         public DbSet<PointOfInterestType> PointOfInterestTypes { get; set; }
         public DbSet<User> Users { get; set; }
+        public DbSet<UserPointOfInterest> UserPointsOfInterest { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

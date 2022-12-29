@@ -1,6 +1,9 @@
 using Microsoft.EntityFrameworkCore;
-using PerfectHomeLocation.Clients;
-using PerfectHomeLocation.Database;
+using PerfectHomeLocation.Api.Clients;
+using PerfectHomeLocation.Api.Repositories;
+using PerfectHomeLocation.Api.Services;
+using PerfectHomeLocation.Database.Contexts;
+using System.Text.Json.Serialization;
 
 public static class Program
 {
@@ -25,13 +28,16 @@ public static class Program
     {
         var services = builder.Services;
 
-        services.AddControllers();
+        services.AddControllers()
+            .AddJsonOptions(x => x.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter()));
         services.AddEndpointsApiExplorer();
         services.AddSwaggerGen();
 
         //MapsApiClient mapsService = new MapsApiClient(builder.Configuration["secrets:googleApiKey"] ?? "");
         services.AddScoped<IMapsApiClient>(x =>
             new MapsApiClient(builder.Configuration["secrets:googleApiKey"] ?? "", x.GetRequiredService<PerfHomeContext>()));
+        services.AddScoped<IMapsService, MapsService>();
+        services.AddScoped<IPointOfInterestRepository, PointOfInterestRepository>();
 
         services.AddDbContext<PerfHomeContext>(
             options => options.UseNpgsql(builder.Configuration["secrets:connectionString"]));
