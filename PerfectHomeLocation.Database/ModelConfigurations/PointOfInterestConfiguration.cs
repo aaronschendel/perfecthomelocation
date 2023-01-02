@@ -12,9 +12,9 @@ namespace PerfectHomeLocation.Database.ModelConfigurations
 			builder.HasKey(x => x.PointOfInterestId);
 			//builder.Property(x => x.PointOfInterestId).ValueGeneratedOnAdd();
 			builder.HasOne(p => p.PointOfInterestType);
+			builder.Property(m => m.PlaceId).IsRequired(false);
 
             builder.ToTable("point_of_interest");
-
         }
 	}
 }

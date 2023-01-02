@@ -40,9 +40,9 @@ namespace PerfectHomeLocation.Api.Controllers
         }
 
         [HttpGet("/results")]
-        public Task<DistanceResultResponse> GetResults()
+        public async Task<DistanceResultResponse> GetResults()
         {
-            return null;
+            return await _mapsService.GetDistances("");
         }
     }
 }
